@@ -45,9 +45,7 @@ export default class GameFacade {
 
     //TODO
     //1) Create expiresAfterSeconds index on lastUpdated
-    positionCollection.createIndex({ lastUpdated: 1}, { expireAfterSeconds: EXPIRES_AFTER})
     //2) Create 2dsphere index on location
-    positionCollection.createIndex({ location: '2dsphere' });
 
 
 
@@ -63,11 +61,12 @@ export default class GameFacade {
     GameFacade.isDbReady();
     let user;
     try {
-      user = await UserFacade.checkUser(userName, password);
       //Step-1. Find the user, and if found continue
       // Use relevant methods in the user facad>
+      await UserFacade.checkUser(userName,password)
+      user = await UserFacade.getUser(userName);
+          
     } catch (err) {
-      console.log(user)
       throw new ApiError("wrong username or password", 403)
     }
 
@@ -80,32 +79,25 @@ export default class GameFacade {
         not neccesarily exist. If not, you must create it, in not found (see what you can do wit upsert)
         Also remember to set a new timeStamp (use the date created above), since this document should only live for a
         short time */
-      // our query is what where searching for
-      const query = { userName: userName };
-      // our update is what prop we set or update
-      const update = { $set: { lastUpdated: date } };
-      // upsert is a combi of update and insert. it will update, if already exists - if not, it will inserte and create
-      // upsert returns a null-value and therefore we use returnNewDocument, to get our new doc returned
-      const opts = { upsert: true, returnNewDocument: true };
       const found = await positionCollection.findOneAndUpdate(
-        query, update, opts 
+        {userName: userName}, //Add what we are searching for (the userName in a Position Document)
+        { $set: {userName: userName, name: user.name, lastUpdated: date, location: point} }, // Add what needs to be added here, remember the document might NOT exist yet
+        //upsert opretter et nyt dokument hvis der ikke eksistere et i forvejen. ReturnOriginal:false gør så vi får returned det opdaterede document i stedet for det originale
+        { upsert: true, returnOriginal:  false}  // Figure out why you probably need to set both of these
       )
 
       /* TODO 
-         By know we have updated (or created) the callers position-document
+         By now we have updated (or created) the callers position-document
          Next step is to see if we can find any nearby players, friends or whatever you call them
          */
-   
       const nearbyPlayers = await GameFacade.findNearbyPlayers(userName, point, distance);
-   
-
-
       //If anyone found,  format acording to requirements
       const formatted = nearbyPlayers.map((player) => {
         return {
           userName: player.userName,
           lat: player.location.coordinates[0],
-          lon: player.location.coordinates[1]
+          lon: player.location.coordinates[1],
+          name: player.name
           // Complete this, using the requirements
         }
       })

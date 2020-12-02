@@ -30,9 +30,17 @@ router.get('/', async function (req, res, next) {
 
 router.post('/nearbyplayers', async function (req, res, next) {
   try {
-    let { userName, password, lat, lon, distance } = req.body;
-    const response = await gameFacade.nearbyPlayers(userName, password, lon, lat, distance);
-    return res.json(response)
+    let username = req.body.userName;
+    let password = req.body.password;
+    let lat = Number(req.body.lat);
+    let lon = Number(req.body.lon);
+    let distance = Number(req.body.distance);
+
+    //Read the exercise and check what must be sent with the request. Grab this information from the request body, and
+    //call the method (the skeleton is already there) nearbyPlayers(....) in the gameFacade and send back the result to the client
+
+    const response = await gameFacade.nearbyPlayers(username, password, lon, lat, distance);
+    return res.json(response);
   } catch (err) {
     next(err)
   }

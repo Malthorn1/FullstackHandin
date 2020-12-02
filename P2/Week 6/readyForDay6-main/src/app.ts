@@ -17,12 +17,14 @@ app.use(express.json())
 
 //const userAPIRouter = require('./routes/userApi');
 const userAPIRouter = require('./routes/userApiDB');
+const gameAPIRouter = require("./routes/gameAPI");
 
 app.get("/api/dummy", (req, res) => {
   res.json({ msg: "Hello" })
 })
 
 app.use("/api/users", userAPIRouter);
+app.use("/gameapi", gameAPIRouter);
 
 //  Add if needed
 // app.use(errorLogger)
