@@ -54,7 +54,7 @@ describe("########## Verify the Game Facade ##########", () => {
       //TODO --> Change latitude below, to a value INSIDE the radius given by DISTANCE_TO_SEARC, and the position of team1
       positionCreator(12.48, 55.77, team2.userName, team2.name, true),
       //TODO --> Change latitude below, to a value OUTSIDE the radius given by DISTANCE_TO_SEARC, and the position of team1
-      positionCreator(13.48, 55.77, team3.userName, team3.name, true),
+      positionCreator(13.48, 57.77, team3.userName, team3.name, true),
     ]
     await positionCollection.insertMany(positions)
 
@@ -84,20 +84,17 @@ describe("########## Verify the Game Facade ##########", () => {
     })
 
     xit("Should find Team2 and Team2", async () => {
-      const playersFound = await GameFacade.nearbyPlayers("t1", "secret", 12.48, 55.77, 1000)
-      expect(playersFound.length).to.be.equal(1);
-      expect(playersFound[0].userName).to.be.equal("t2")
-      expect(playersFound[1].userName).to.be.equal("t3")
+      //TODO
     })
   })
 
-  //  describe("Verify getPostIfReached", () => {
-  //   xit("Should find the post since it was reached", async () => {
-  //TODO
-  //  })
+  describe("Verify getPostIfReached", () => {
+    xit("Should find the post since it was reached", async () => {
+      //TODO
+    })
 
-  //   xit("Should NOT find the post since it was NOT reached", async () => {
-  //     //TODO
-  //    })
-  //  })
+    xit("Should NOT find the post since it was NOT reached", async () => {
+      //TODO
+    })
+  })
 })

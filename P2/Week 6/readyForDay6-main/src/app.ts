@@ -24,8 +24,7 @@ app.get("/api/dummy", (req, res) => {
 })
 
 app.use("/api/users", userAPIRouter);
-app.use("/gameapi", gameAPIRouter);
-
+app.use("/gameapi", gameAPIRouter); 
 //  Add if needed
 // app.use(errorLogger)
 

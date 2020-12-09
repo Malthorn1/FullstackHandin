@@ -75,7 +75,7 @@ describe("Verify /gameapi/getPostIfReached", () => {
       body: JSON.stringify(newPosition)
     }
     const result = await fetch(`${URL}/gameapi/nearbyplayers`, config).then(r => r.json());
-    console.log(result) 
+    console.log(result)
     expect(result.length).to.be.equal(1)
     expect(result[0].name).to.be.equal("Team2")
   })

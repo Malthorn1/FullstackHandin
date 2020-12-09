@@ -140,4 +140,4 @@ async function test() {
   //debug("Done, and connection was closed")
 
 }
-//test();
+test();

@@ -7,6 +7,8 @@ import { getConnectedClient } from "../config/setupDB"
 import UserFacade from '../facades/userFacadeWithDB';
 import GameFacade from "../facades/gameFacade";
 
+
+
 let dbInitialized = false;
 
 (async function initDb() {
@@ -28,6 +30,9 @@ router.get('/', async function (req, res, next) {
   res.json({ msg: "game API" })
 })
 
+
+
+
 router.post('/nearbyplayers', async function (req, res, next) {
   try {
     let username = req.body.userName;
@@ -46,8 +51,8 @@ router.post('/nearbyplayers', async function (req, res, next) {
   }
 })
 
+
 router.post('/getPostIfReached', async function (req, res, next) {
-    res.json({ msg: "Post reached" })
   throw new Error("Not yet implemented")
 })
 
