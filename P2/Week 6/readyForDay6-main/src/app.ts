@@ -25,13 +25,13 @@ const graphQLRouter = require("./routes/graphQLAPI")
 const geoAPIRouter = require('./routes/geoAPI')
 
 app.get("/api/dummy", (req, res) => {
-  res.json({ msg: "Hello" })
+  res.json({ msg: "Hello Dummy" })
 })
 
 app.use("/api/users", userAPIRouter);
 app.use("/gameapi", gameAPIRouter); 
 app.use("/graphql", graphQLRouter); 
-app.use("/api/geoAPI/", geoAPIRouter);
+app.use("/api/geoapi", geoAPIRouter);
 //  Add if needed
 // app.use(errorLogger)
 
