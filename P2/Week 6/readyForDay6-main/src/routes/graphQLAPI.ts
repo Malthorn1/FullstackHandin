@@ -55,7 +55,7 @@ const schema = buildSchema(`
      createUser(input:UserInput): User, 
      deleteUser(userName: String!): String
     }
-   }
+   
    
 
 `)
