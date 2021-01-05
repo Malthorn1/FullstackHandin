@@ -53,7 +53,11 @@ const schema = buildSchema(`
  
    type Mutation {
      createUser(input:UserInput): User 
+     deleteUser(userName: String!): String
+    }
    }
+   
+
 `)
 
 var root = {
@@ -84,7 +88,11 @@ var root = {
       } catch (err) {
         throw err;
       }
-    }
+    },
+    deleteUser: async ( { userName }: any ) => {
+      const status = await userFacade.deleteUser(userName);
+      return status;
+  }
   }
   
 
