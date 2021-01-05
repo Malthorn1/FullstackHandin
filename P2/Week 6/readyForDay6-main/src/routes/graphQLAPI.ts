@@ -52,7 +52,7 @@ const schema = buildSchema(`
    }
  
    type Mutation {
-     createUser(input:UserInput): User 
+     createUser(input:UserInput): User, 
      deleteUser(userName: String!): String
     }
    }

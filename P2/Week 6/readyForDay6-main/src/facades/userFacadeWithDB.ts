@@ -41,12 +41,12 @@ export default class UserFacade {
   }
 
 
-  static async addUser(user: IGameUser): Promise<string> {
+  static async addUser(user: IGameUser): Promise<any> {
     UserFacade.isDbReady()
     const hash = await bryptAsync(user.password);
     let newUser = { ...user, password: hash }
     const result = await userCollection.insertOne(newUser);
-    return "User was added";
+    return newUser;
   }
 
   static async deleteUser(userName: string): Promise<string> {

@@ -15,7 +15,7 @@ import { getConnectedClient, closeConnection } from "../config/setupDB"
     const db = client.db(process.env.DB_NAME)
 
     const usersCollection = db.collection(USER_COLLECTION_NAME)
-    await usersCollection.deleteMany({})
+    //await usersCollection.deleteMany({})
     const secretHashed = await bryptAsync("secret");
     const status = await usersCollection.insertMany([
       { name: "Peter Pan", userName: "pp@b.dk", password: secretHashed, role: "user" },
