@@ -1,11 +1,11 @@
-import winston from "winston";
-import * as expressWinston from "express-winston";
+const winston = require('winston');
+const expressWinston = require('express-winston');
 import path from "path"
 
-let requestLoggerTransports: Array<any> = [
+const requestLoggerTransports: Array<any> = [
   new winston.transports.File({ filename: path.join(process.cwd(), "logs", "request.log") })
 ]
-let errorLoggerTransports: Array<any> = [
+const errorLoggerTransports: Array<any> = [
   new winston.transports.File({ filename: path.join(process.cwd(), "logs", "error.log") })
 ]
 if (process.env.NODE_ENV !== 'production') {
@@ -13,19 +13,25 @@ if (process.env.NODE_ENV !== 'production') {
   errorLoggerTransports.push(new winston.transports.Console());
 }
 
-let requestLogger = expressWinston.logger({
+const requestLogger = expressWinston.logger({
   transports: requestLoggerTransports,
   format: winston.format.combine(
-    winston.format.colorize(), winston.format.json()
+    winston.format.colorize(),
+    winston.format.timestamp(), 
+    winston.format.json(),
+    winston.format.prettyPrint()
   ),
   expressFormat: true,
   colorize: false
 })
 
-let errorLogger = expressWinston.errorLogger({
+const errorLogger = expressWinston.errorLogger({
   transports: errorLoggerTransports,
   format: winston.format.combine(
-    winston.format.colorize(), winston.format.json()
+    winston.format.colorize(),
+    winston.format.timestamp(), 
+    winston.format.json(),
+    winston.format.prettyPrint()
   )
 })
 

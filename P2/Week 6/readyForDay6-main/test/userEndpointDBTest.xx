@@ -28,6 +28,7 @@ describe("####### Verify the User Endpoints (/api/users) ##########", function (
 
     server = require("../src/app").server;
     URL = `http://localhost:${process.env.PORT}`;
+    console.log(URL)
     // done();
   })
 
@@ -35,9 +36,9 @@ describe("####### Verify the User Endpoints (/api/users) ##########", function (
   beforeEach(async function () {
     //Observe, no use of facade, but operates directly on connection
     // const client = await getConnectedClient("From UserEndpoint Test");
-    // const db = client.db(process.env.DB_NAME)
+     //const db = client.db(process.env.DB_NAME)
 
-    // usersCollection = db.collection("users")
+  //   usersCollection = db.collection("users")
     await usersCollection.deleteMany({})
     const secretHashed = await bryptAsync("secret");
     const status = await usersCollection.insertMany([
@@ -51,14 +52,19 @@ describe("####### Verify the User Endpoints (/api/users) ##########", function (
     // DONT CALL THIS. Will make additonal tests fail -->server.close();
   })
 
-  it("Should get the message Hello", async () => {
+  it("Should get the message Hello Dummy", async () => {
     const result = await fetch(`${URL}/api/dummy`).then(r => r.json());
-    expect(result.msg).to.be.equal("Hello")
+    expect(result.msg).to.be.equal("Hello Dummy")
   })
 
   it("Should get three users", async () => {
+    console.log("HEEEEJ")
+    console.log("--------------------------------------------------------------------------")
     const result = await fetch(`${URL}/api/users`).then(r => r.json());
-    expect(result.length).to.be.equal(3)
+    console.log("HEEEEJ")
+    console.log("--------------------------------------------------------------------------")
+    console.log(result)
+    expect(result.length).to.be.equal(2)
 
   })
 

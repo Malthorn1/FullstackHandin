@@ -5,12 +5,13 @@ import { ApiError } from "./errors/apiError";
 import cors from "cors"
 
 //Add if needed
-//import { requestLogger, errorLogger } from "./middlewares/logger";
+import {requestLogger, errorLogger} from './middlewares/logger'
 
 const app = express();
 
 app.use(cors())
 app.use(express.static(path.join(process.cwd(), "public")))
+app.use(requestLogger);
 
 //  Add if needed
 //app.use(requestLogger)
