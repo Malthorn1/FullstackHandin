@@ -1,0 +1,123 @@
+{
+  meta: {
+    error: ApiError: wrong username or password
+        at Function.<anonymous> (C:\Users\mikke\Desktop\FullStackJavaScript\Reeksamen\Spørgsmål 2\express-mongo-typescript-start-code-master\src\facades\gameFacade.ts:73:13)
+        at Generator.throw (<anonymous>)
+        at rejected (C:\Users\mikke\Desktop\FullStackJavaScript\Reeksamen\Spørgsmål 2\express-mongo-typescript-start-code-master\src\facades\gameFacade.ts:6:65)
+        at processTicksAndRejections (internal/process/task_queues.js:93:5) {
+      errorCode: 403
+    },
+    level: 'error',
+    message: 'uncaughtException: wrong username or password\n' +
+      'ApiError: wrong username or password\n' +
+      '    at Function.<anonymous> (C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\src\\facades\\gameFacade.ts:73:13)\n' +
+      '    at Generator.throw (<anonymous>)\n' +
+      '    at rejected (C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\src\\facades\\gameFacade.ts:6:65)\n' +
+      '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+    stack: 'ApiError: wrong username or password\n' +
+      '    at Function.<anonymous> (C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\src\\facades\\gameFacade.ts:73:13)\n' +
+      '    at Generator.throw (<anonymous>)\n' +
+      '    at rejected (C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\src\\facades\\gameFacade.ts:6:65)\n' +
+      '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+    exception: true,
+    date: 'Sun Jan 24 2021 14:59:54 GMT+0100 (Centraleuropæisk normaltid)',
+    process: {
+      pid: 6480,
+      uid: null,
+      gid: null,
+      cwd: 'C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master',
+      execPath: 'C:\\Program Files\\nodejs\\node.exe',
+      version: 'v14.8.0',
+      argv: [
+        'C:\\Program Files\\nodejs\\node.exe',
+        'C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\node_modules\\mocha\\lib\\cli\\cli.js',
+        'test/**/*.ts',
+        '--diff',
+        '--exit',
+        '--require',
+        'ts-node/register',
+        '--no-config',
+        '--no-package',
+        '--no-opts',
+        '--extension',
+        'js',
+        '--extension',
+        'cjs',
+        '--extension',
+        'mjs',
+        '--reporter',
+        'spec',
+        '--slow',
+        '75',
+        '--timeout',
+        '0',
+        '--ui',
+        'bdd',
+        '--watch-ignore',
+        'node_modules',
+        '--watch-ignore',
+        '.git'
+      ],
+      memoryUsage: {
+        rss: 261509120,
+        heapTotal: 221696000,
+        heapUsed: 193404336,
+        external: 20216975,
+        arrayBuffers: 18651137
+      }
+    },
+    os: { loadavg: [ 0, 0, 0 ], uptime: 968076 },
+    trace: [
+      {
+        column: 13,
+        file: 'C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\src\\facades\\gameFacade.ts',
+        function: null,
+        line: 73,
+        method: null,
+        native: false
+      },
+      {
+        column: null,
+        file: null,
+        function: 'Generator.throw',
+        line: null,
+        method: 'throw',
+        native: false
+      },
+      {
+        column: 65,
+        file: 'C:\\Users\\mikke\\Desktop\\FullStackJavaScript\\Reeksamen\\Spørgsmål 2\\express-mongo-typescript-start-code-master\\src\\facades\\gameFacade.ts',
+        function: 'rejected',
+        line: 6,
+        method: null,
+        native: false
+      },
+      {
+        column: 5,
+        file: 'internal/process/task_queues.js',
+        function: 'processTicksAndRejections',
+        line: 93,
+        method: null,
+        native: false
+      }
+    ],
+    req: {
+      url: '/api/gameapi/nearbyplayers',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'content-length': '83',
+        'user-agent': 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)',
+        'accept-encoding': 'gzip,deflate',
+        connection: 'close',
+        host: 'localhost:7777'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/gameapi/nearbyplayers',
+      query: {}
+    }
+  },
+  level: '\x1B[31merror\x1B[39m',
+  message: 'middlewareError'
+}

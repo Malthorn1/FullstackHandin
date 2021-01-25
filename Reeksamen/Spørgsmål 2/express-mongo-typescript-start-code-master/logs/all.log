@@ -1,0 +1,100 @@
+{
+  meta: {
+    req: {
+      url: '/api/gameapi/nearbyplayers',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'content-length': '76',
+        'user-agent': 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)',
+        'accept-encoding': 'gzip,deflate',
+        connection: 'close',
+        host: 'localhost:7777'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/gameapi/nearbyplayers',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 173
+  },
+  level: '\x1B[32minfo\x1B[39m',
+  message: 'HTTP POST /api/gameapi/nearbyplayers',
+  timestamp: '2021-01-24T13:59:53.580Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/gameapi/nearbyplayers',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'content-length': '78',
+        'user-agent': 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)',
+        'accept-encoding': 'gzip,deflate',
+        connection: 'close',
+        host: 'localhost:7777'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/gameapi/nearbyplayers',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 193
+  },
+  level: '\x1B[32minfo\x1B[39m',
+  message: 'HTTP POST /api/gameapi/nearbyplayers',
+  timestamp: '2021-01-24T13:59:53.993Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/gameapi/nearbyplayers',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'content-length': '74',
+        'user-agent': 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)',
+        'accept-encoding': 'gzip,deflate',
+        connection: 'close',
+        host: 'localhost:7777'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/gameapi/nearbyplayers',
+      query: {}
+    },
+    res: { statusCode: 200 },
+    responseTime: 172
+  },
+  level: '\x1B[32minfo\x1B[39m',
+  message: 'HTTP POST /api/gameapi/nearbyplayers',
+  timestamp: '2021-01-24T13:59:54.602Z'
+}
+{
+  meta: {
+    req: {
+      url: '/api/gameapi/nearbyplayers',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'content-length': '83',
+        'user-agent': 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)',
+        'accept-encoding': 'gzip,deflate',
+        connection: 'close',
+        host: 'localhost:7777'
+      },
+      method: 'POST',
+      httpVersion: '1.1',
+      originalUrl: '/api/gameapi/nearbyplayers',
+      query: {}
+    },
+    res: { statusCode: 403 },
+    responseTime: 113
+  },
+  level: '\x1B[32minfo\x1B[39m',
+  message: 'HTTP POST /api/gameapi/nearbyplayers',
+  timestamp: '2021-01-24T13:59:54.952Z'
+}
