@@ -27,6 +27,7 @@ describe("####### Verify the User Endpoints (/api/users) ##########", function (
     usersCollection = db.collection("users")
 
     server = require("../src/app").server;
+
     URL = `http://localhost:${process.env.PORT}`;
     console.log(URL)
     // done();
@@ -58,13 +59,9 @@ describe("####### Verify the User Endpoints (/api/users) ##########", function (
   })
 
   it("Should get three users", async () => {
-    console.log("HEEEEJ")
-    console.log("--------------------------------------------------------------------------")
     const result = await fetch(`${URL}/api/users`).then(r => r.json());
-    console.log("HEEEEJ")
-    console.log("--------------------------------------------------------------------------")
     console.log(result)
-    expect(result.length).to.be.equal(2)
+    expect(result.length).to.be.equal(3)
 
   })
 
